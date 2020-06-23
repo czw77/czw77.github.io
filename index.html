@@ -12,10 +12,156 @@
         color:red;
        
     }
+    *{
+        margin:0;
+        padding:0;
+    }
+    li{
+        list-style-type: none;
+    }
+    .hover-box{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        background-color:pink;
+        width:300px;
+        min-height: 300px;
+        height:auto !important;
+        height:300px;
+        overflow:visible;
+
+
+
+    }
+    .hover-box > li{
+        padding:10px 10px;
+        border:2px solid blue;
+        border-radius:6px;
+    }
+    .hover-2{
+        /* position: relative; */
+        width:150px;
+        box-sizing: border-box;
+    }
+    .hover-2 >span{
+        text-align: center;
+        padding:2px;
+        color:black;
+
+    }
+    .hover-2 >span:hover{
+        color:red;
+        transform:sale(1.5);
+        border:1px black solid;
+    }
+    .hover-2-child{
+        width:150px;
+        position:absolute;
+        right:0;
+        top:0;
+        background-color:black;
+        color:white;
+        transition: 1s;
+        height: 0;
+        overflow: hidden;
+    }
+    .hover-2:hover  .hover-2-child{
+        /* min-height: 300px;
+        height:auto !important; */
+        height:300px;
+        /* overflow: visibel; */
+    }
+    label[for='handle']{
+        width:100%;
+    }
+    #handle{
+        display: none;
+    }
+    .handle-box{
+        /* border:2px solid black; */
+        height:0;
+        transition:2s;
+        overflow: hidden;
+    }
+    #handle:checked + .handle-box {
+        height:auto;
+    }
+    .nav{
+        display: flex;
+        justify-content:space-between;
+        padding-bottom: 30px;
+
+    }
+    .nav >h3{
+        flex:1;
+    }
+    .nav >h3 >a{
+        border: 1px solid block;
+        box-sizing: border-box;
+        font-size: 12px;
+    }
+    .hover-4{
+        overflow:visible;
+    }
+    .show-box{
+        background-color: blueviolet;
+    }
+    .show-box >dt{
+        display:none;
+    }
+    .show-box > dt:target{
+        display: block;
+        color: white;
+    }
 </style>
 <body>
-    <h1>相信自己</h1>
-    <div style="color:red,border-radius:2px solid blue">哈哈,现在都要毕业了</div>
-    <h2>找一份好工作</h2>
+    <ul class="hover-box">
+        <li class="hover-2">
+            <span>i&nbsp; am &nbsp; 3</span>
+            <ul class="hover-2-child">
+                <li class="2-chilid-1">2-child-1</li>
+                <li class="2-chilid-2">2-child-2</li>
+                <li class="2-chilid-3">2-child-3</li>
+                <li class="2-chilid-4">2-child-4</li>
+            </ul>
+        </li>
+        <li class="hover-2">
+            <span>i&nbsp; am &nbsp; 4</span>
+            <ul class="hover-2-child">
+                <li class="2-chilid-1">2-child-1</li>
+                <li class="2-chilid-2">2-child-2</li>
+                <li class="2-chilid-3">2-child-3</li>
+                <li class="2-chilid-4">2-child-4</li>
+            </ul>
+        </li>
+        <li class="hover-2 hover-3">
+            <label for="handle">手风琴</label><input type="checkbox" id="handle">
+            <ul class="handle-box">
+                <li class="handle-1">handle-1</li>
+                <li class="handle-2">handle-2</li>
+                <li class="handle-3">handle-3</li>
+                <li class="handle-4">handle-4</li>
+            </ul>
+        </li>
+        <li class="hover-2 hover-4">
+            <h3>a选项卡切换</h3>
+            <dl class="tab-box">
+                <dd class="nav">
+                    <h3><a href="#show-tab-1">-1</a></h3>
+                    <h3><a href="#show-tab-2">-2</a></h3>
+                    <h3><a href="#show-tab-3">-3</a></h3>
+                    <h3><a href="#show-tab-4">-4</a></h3>
+                </dd>
+                <div class="show-box">
+                   <dt id="show-tab-1">show-tab-1</dt>
+                   <dt id="show-tab-2">show-tab-2</dt>
+                   <dt id="show-tab-3">show-tab-3</dt>
+                   <dt id="show-tab-4">show-tab-4</dt>
+                </div>
+            </dl>
+        </li>
+        
+    </ul>
 </body>
 </html>
